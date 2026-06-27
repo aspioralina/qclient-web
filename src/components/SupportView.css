@@ -1,0 +1,217 @@
+.support-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 0 24px 180px;
+  box-sizing: border-box;
+  animation: slideUpFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.support-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.ios-dismiss-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 16px;
+  cursor: pointer;
+}
+
+.ios-dismiss-bar {
+  width: 40px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ios-dismiss-bar-container:hover .ios-dismiss-bar {
+  background-color: rgba(255, 255, 255, 0.55);
+  transform: scaleY(1.2);
+}
+
+
+.support-header {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.support-title {
+  font-size: 32px;
+  font-weight: 200;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+
+.support-subtitle {
+  font-size: 15px;
+  font-weight: 200;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+
+.support-card {
+  background-color: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.support-card:hover {
+  transform: translateY(-4px);
+  background-color: #070707;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+
+.support-card-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #ffffff;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.support-card:hover .support-card-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.support-card-title {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 12px;
+  letter-spacing: -0.2px;
+}
+
+.support-card-desc {
+  font-size: 13px;
+  font-weight: 200;
+  line-height: 1.6;
+  color: #a3a3a3;
+  margin: 0 0 32px;
+  flex-grow: 1;
+}
+
+
+.support-action-btn {
+  width: 100%;
+  padding: 11px 24px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.standard-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.standard-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: scale(1.02);
+}
+
+.standard-btn:active {
+  transform: scale(0.97);
+}
+
+
+.shimmer-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  animation: supportShimmer 4s infinite linear;
+}
+
+.shimmer-btn:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.shimmer-btn:hover::after {
+  animation-duration: 2s; 
+}
+
+.shimmer-btn:active {
+  transform: scale(0.97);
+}
+
+@keyframes supportShimmer {
+  0% { left: -150%; }
+  50% { left: 150%; }
+  100% { left: 150%; }
+}
+
+
+@media (max-width: 768px) {
+  .support-page {
+    padding: 0 16px 120px;
+  }
+  
+  .support-title {
+    font-size: 28px;
+  }
+  
+  .support-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .support-card {
+    padding: 28px 20px;
+  }
+}
